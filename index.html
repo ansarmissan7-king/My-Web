@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ansarmissan Shop | Premium Services</title>
+<style>
+        :root { --accent: #00d4ff; --dark: #0a0a1a; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background: var(--dark); color: #fff; }
+
+        /* Header with my.png background */
+        header { 
+            height: 250px; 
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('my.png'); 
+            background-size: cover; 
+            background-position: center; 
+            display: flex; flex-direction: column; justify-content: center; align-items: center; 
+            border-bottom: 3px solid var(--accent);
+        }
+
+        /* Search Section */
+        .search-section { padding: 20px; text-align: center; }
+        #search { width: 90%; max-width: 450px; padding: 12px; border-radius: 25px; border: none; background: #1a1a2e; color: white; text-align: center; }
+
+        /* Grid */
+        .container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; padding: 20px; max-width: 1100px; margin: auto; }
+        .card { background: #1a1a2e; border-radius: 12px; padding: 12px; text-align: center; transition: 0.3s; border: 1px solid #333; }
+        .card:hover { border-color: var(--accent); transform: translateY(-5px); }
+        .card img { width: 100%; height: 140px; object-fit: cover; border-radius: 8px; margin-bottom: 10px; }
+        
+        .price { color: var(--accent); font-weight: bold; margin: 8px 0; }
+        .btn-order { background: var(--accent); color: #000; border: none; padding: 10px; width: 100%; border-radius: 5px; font-weight: bold; cursor: pointer; }
+
+        footer { padding: 40px; text-align: center; background: #000; margin-top: 30px; }
+</style>
+  </head>
+  <body>
+
+	<header>
+	  <h1>Ansarmissan Shop</h1>
+	  <p>Premium Digital Services</p>
+	</header>
+
+	<div class="search-section">
+	  <input type="text" id="search" placeholder="Search 20+ services..." onkeyup="filter()">
+	</div>
+
+	<div class="container" id="grid"></div>
+
+	<footer>
+	  <textarea id="comment" placeholder="Feedback/Comments..." style="width:80%; height:60px; border-radius:5px; padding:10px;"></textarea><br>
+	  <button class="btn-order" style="width:200px; margin-top:10px;" onclick="submit()">Submit</button>
+	  <p style="margin-top:20px;">Developed By Ansarmissan © 2026</p>
+	</footer>
+
+<script>
+    // 20 Services List (Aap yahan images ke naam adjust kar sakte hain)
+    const items = [
+        ["hacking.jpg", "Hacking Course", "Rs 5000"], ["FB-hack.jpg", "FB Hack", "Rs 2500"],
+        ["FB-rec.jpg", "FB Recovery", "Rs 1000"], ["followers.png", "1 KTiktok Followers", "Rs 5000"],
+        ["likes.png", "1K Tiktok Likes", "Rs 100"], ["number.png", "Fake Number", "Rs 500"],
+        ["unban.jpg", "WhatsApp Unban", "Rs 3000"], ["uk.jpg", "UK Account", "Rs 1500"],
+        ["sim.webp", "Number block", "Rs 800"], ["photo.webp", "Photo Edit", "Rs 300"],
+        ["live.jpg", "TikTok Live", "Rs 1000"], ["comment.jpg", "1K Custom Comments", "Rs 500"],
+        ["ban.png", "WhatsApp Ban", "Rs 3500"], ["toolkit.jpg", "Toolkit Pack", "Rs 500"],
+        ["apps.png", "Premium Apps", "Rs 500"], ["black.jpg", "Cyber Protect", "Rs 5000"],
+        ["whatsapp.png","Whatsapp Recovery", "Rs 500"], ["unblock.png", "Block Sim Unlock", "Rs 500"],
+        ["web.png", "Website Develop", "Rs 1000"], ["other.jpg", "Other Help", "Custom"]
+    ];
+
+    const grid = document.getElementById('grid');
+    function render(data) {
+        grid.innerHTML = data.map(i => `
+            <div class="card">
+                <img src="${i[0]}" onerror="this.src='https://via.placeholder.com/200'">
+                <h4>${i[1]}</h4>
+                <p class="price">${i[2]}</p>
+                <button class="btn-order" onclick="order('${i[1]}')">ORDER NOW</button>
+            </div>
+        `).join('');
+    }
+
+    function filter() {
+        let val = document.getElementById("search").value.toLowerCase();
+        render(items.filter(i => i[1].toLowerCase().includes(val)));
+    }
+
+    function order(name) { window.open("https://wa.me/+923299762939?text=I need order: " + name); }
+    function submit() { window.open("https://wa.me/+923299762939?text=Feedback: " + document.getElementById('comment').value); }
+
+    render(items);
+</script>
+  </body>
+</html>
+
