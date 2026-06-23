@@ -43,7 +43,7 @@
 	</header>
 
 	<div class="search-section">
-	  <input type="text" id="search" placeholder="Search 20+ services..." onkeyup="filter()">
+	  <input type="text" id="search" placeholder="Search services..." onkeyup="filter()">
 	</div>
 
 	<div class="container" id="grid"></div>
@@ -58,17 +58,19 @@
     // 20 Services List (Aap yahan images ke naam adjust kar sakte hain)
     const items = [
         ["hacking.jpg", "Hacking Course", "Rs 5000"], ["FB-hack.jpg", "FB Hack", "Rs 2500"],
-        ["FB-rec.jpg", "FB Recovery", "Rs 1000"], ["followers.png", "1 KTiktok Followers", "Rs 5000"],
+        ["FB-rec.jpg", "FB Recovery", "Rs 1000"], ["followers.png", "1K Tiktok Followers", "Rs 5000"],
         ["likes.png", "1K Tiktok Likes", "Rs 100"], ["number.png", "Fake Number", "Rs 500"],
-        ["unban.jpg", "WhatsApp Unban", "Rs 3000"], ["uk.jpg", "UK Account", "Rs 1500"],
-        ["sim.webp", "Number block", "Rs 800"], ["photo.webp", "Photo Edit", "Rs 300"],
-        ["live.jpg", "TikTok Live", "Rs 1000"], ["comment.jpg", "1K Custom Comments", "Rs 500"],
+        ["unban.jpg", "WhatsApp Unban", "Rs 3000"], ["uk.jpg", "TikTok UK Account", "Rs 1500"],
+        ["sim.webp", "Sim block", "Rs 800"], ["photo.webp", "Photo Edit", "Rs 300"],
+        ["live.jpg", "TikTok Live Apk", "Rs 1000"], ["comment.jpg", "1K Custom Comments", "Rs 500"],
         ["ban.png", "WhatsApp Ban", "Rs 3500"], ["toolkit.jpg", "Toolkit Pack", "Rs 500"],
         ["apps.png", "Premium Apps", "Rs 500"], ["black.jpg", "Cyber Protect", "Rs 5000"],
-        ["whatsapp.png","Whatsapp Recovery", "Rs 500"], ["unblock.png", "Block Sim Unlock", "Rs 500"],
-        ["web.png", "Website Develop", "Rs 1000"], ["other.jpg", "Other Help", "Custom"]
-    ];
-
+        ["whatsapp.png","Whatsapp Recovery", "Rs 500"], ["unblock.png", "Block Sim Unblock", "Rs 500"],
+		["iphone.png","Iphone Password unlock", "Rs 2000"], ["icld.png", "Apple ICloud Unlock", "Rs 1500"],
+		["Android.png","Android Unlock", "Rs 1500"], ["frp.png", "FRP Unlock", "Rs 800"],
+          ["me.png", "Ansarmissan 2.0 Toolkit Apps", "Free"], ["logo.png", "Fake CNIC ", "Rs 300"],
+            ["logo.png", "Professional Logo ", "Rs 300"], ["go.png", "Leaked Videos ", "Rs 500"],
+			["Pc.png","Laptop Or Pc Unlock", "Rs 2500"], ["temp.png", "International Social Account", "Rs 500"],]
     const grid = document.getElementById('grid');
     function render(data) {
         grid.innerHTML = data.map(i => `
@@ -93,4 +95,3 @@
 </script>
   </body>
 </html>
-
